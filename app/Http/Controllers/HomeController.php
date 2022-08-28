@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $lots = Lot::where('status', 'sale')
-            ->where('end_time', '>', now())
+            //->where('end_time', '>', now())
             ->with('user', 'category', 'images', 'bids')
             ->orderByDesc('updated_at')
             ->paginate(6);
